@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blanka Selfie Machine</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var i=0;
+    </script>
+</head>
+<body>
+
+
+<div class="titolo"><img src="assets/css/logo-blanka.png" width="100%" style="max-width: 547px"/></div>
+
+<div class="container">
+
+  <div class="app">
+    <a href="#" id="start-camera" class="visible" style="display:none">Scatta un Selfie!</a>
+    <video id="camera-stream"></video>
+    <img id="snap">
+
+    <p id="error-message"></p>
+    <p id="scatta" style="cursor: pointer"><img src="assets/css/fermaposto.jpg" style="width:100%"></p>
+    <div class="controls">
+      <a id="delete-photo" title="Canella Foto" class="disabled"><i class="material-icons">delete</i></a>
+      <a id="take-photo" title="Scatta Selfie"><i class="material-icons count">camera_alt</i></a>
+      <!--<a href="#" id="download-photo" download="selfie.jpg" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>-->
+      <a id="download-photo" title="Invia a Instagram" class="disabled"><i class="material-icons send">send</i><i class="material-icons" style="display: none" id="spinner">hourglass_full</i></a>
+    </div>
+
+    <!-- Hidden canvas element. Used for taking snapshot of video. -->
+    <canvas ></canvas>
+
+  </div>
+    <div class="products" style="width:100%;text-align:center">
+        <span></span>
+    </div>
+</div>
+
+
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
