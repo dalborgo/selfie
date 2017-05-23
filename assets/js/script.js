@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 else if(sec==1)
                     $(".count").html('looks_one');
                 else
-                    $(".count").html('tag_faces');
+                    $(".count").html('done');
                 }, // callback for each second
             onCounterEnd: function(){
                 var snap = takeSnapshot();
