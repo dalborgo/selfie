@@ -13,6 +13,40 @@ html{
     background-size: cover;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(2, 2);
+        -ms-transform: scale(2, 2);
+        -webkit-transform: scale(2, 2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    }
+}
+.gira{
+-webkit-animation:spin 4s linear infinite;
+-moz-animation:spin 4s linear infinite;
+animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#take-photo.cc {
+    animation: pulse 1s ease-out infinite;
+    opacity: 0.5;
+    margin-bottom: 50%;
+}
+
 div.titolo{
     margin: 0px 0;
     text-align: center;
@@ -105,15 +139,24 @@ div.titolo{
     cursor: pointer;
 }
 
+.app .controls  a.nocer{
+    background:none;
+}
+
 .app .controls a:hover{
     opacity: 1;
 }
 
 .app .controls a.disabled{
     background-color: #555;
-    opacity: 0.5;
+    opacity: 0;
     cursor: default;
     pointer-events: none;
+}
+.prevent {
+	cursor: default;
+    pointer-events: none;
+
 }
 .app .controls a.disabledSpecial{
     background-color: #111;
@@ -132,7 +175,7 @@ div.titolo{
 }
 
 .app .controls #take-photo i{
-    font-size: 42px;
+    font-size: 50px;
 }
 
 .app canvas{
@@ -169,7 +212,7 @@ div.titolo{
     }
 
     .app .controls #take-photo i{
-        font-size: 24px;
+        font-size: 30px;
     }
 
 }
@@ -195,7 +238,7 @@ div.titolo{
     }
 
     .app .controls #take-photo i{
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 

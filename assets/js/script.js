@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
             jQuery('#snap').show();
             jQuery('.controls').show();
             jQuery('.products').hide();
+            $("#imgsc").show();
+            $(".count").hide();
             video.play();
             showVideo();
         }
@@ -79,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         e.preventDefault();
         take_photo_btn.classList.add("disabledSpecial");
+        $("#imgsc").hide();
+        $(".count").show();
         $(".count").html('looks_5');
+
+        take_photo_btn.classList.add("cc");
         var myCounter = new Countdown({
             seconds:4,  // number of seconds to count down
             onUpdateStatus: function(sec){
@@ -108,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Set the href attribute of the download button to the snap url.
                 download_photo_btn.pers = snap;
                 take_photo_btn.classList.remove("disabledSpecial");
+                take_photo_btn.classList.remove("cc");
                 take_photo_btn.classList.add("disabled");
                 // Pause video playback of stream.
                 //video.pause();
@@ -127,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
         image.classList.remove("visible");
 
         // Disable delete and save buttons
+        $("#imgsc").show();
+        $(".count").hide();
         delete_photo_btn.classList.add("disabled");
         download_photo_btn.classList.add("disabled");
         take_photo_btn.classList.remove("disabled");
@@ -145,7 +154,9 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         jQuery('.send').hide();
-        jQuery('#spinner').show();
+        download_photo_btn.classList.add("gira");
+		download_photo_btn.classList.add("prevent");
+        //jQuery('#spinner').show();
         $.ajax({
             type: 'POST',
             url: "uploadPhoto.php",
@@ -153,7 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
             success: function (data) {
                 jQuery('.send').show();
                 jQuery('.products').show();
-                jQuery('#spinner').hide();
+               // jQuery('#spinner').hide();
+                download_photo_btn.classList.remove("gira");
+download_photo_btn.classList.remove("prevent");
+
                 video.play();
                 dd = "<img style='width:15%;margin-top:20px;margin-right:10px;border-radius: 10px' src='" + data + "'/>";
                 i++;

@@ -29,7 +29,7 @@ $truncatedDebug = false;
 
 /////// MEDIA ////////
 $photoFilename = $filePath;
-$captionText = 'Blanka Selfie Machine';
+$captionText = 'Blanka Selfie Machine #blankaselfiemachine #blanka #blankabardolino #bardolino #lagodigarda #verona #italia #gardasee #lakegada #bardolinobynight #partyhard #foodanddrink #italy #fattiunselfie';
 //////////////////////
 
 
