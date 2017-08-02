@@ -231,7 +231,8 @@ download_photo_btn.classList.remove("prevent");
             context.translate(width,0 );
             context.scale(-1, 1);
             context.drawImage(video, 0, 0, width, video.videoHeight, 0, 0, width, video.videoHeight);
-
+            var imgas=document.getElementById("messaggio");
+            context.drawImage(imgas,10,10);
             // Turn the canvas image into a dataURL that can be used as a src for our photo.
             return hidden_canvas.toDataURL('image/jpeg');
         }
